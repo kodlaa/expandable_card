@@ -4,11 +4,10 @@ import 'expandablecard.dart';
 
 class ExpandableCardPage extends StatelessWidget {
   ExpandableCardPage(
-      {@required this.page, @required this.expandableCard, this.key});
+      {@required this.page, @required this.expandableCard});
 
   final Widget page;
   final ExpandableCard expandableCard;
-  final GlobalKey key;
 
   @override
   Widget build(BuildContext context) {

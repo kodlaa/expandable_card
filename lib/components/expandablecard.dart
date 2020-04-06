@@ -12,6 +12,8 @@ class ExpandableCard extends StatefulWidget {
     this.backgroundColor = Colors.blueGrey,
     this.hasRoundedCorners = false,
     this.hasHandle = true,
+    this.handle
+
   });
 
   final List<Widget> children;
@@ -22,6 +24,8 @@ class ExpandableCard extends StatefulWidget {
   final bool hasShadow;
   final bool hasRoundedCorners;
   final Color backgroundColor;
+  final Widget handle;
+
 
   @override
   _ExpandableCardState createState() => _ExpandableCardState();
@@ -153,7 +157,7 @@ class _ExpandableCardState extends State<ExpandableCard>
                 padding: widget.padding,
                 child: Column(
                   children: <Widget>[
-                    if (widget.hasHandle) Handle(),
+                    if (widget.hasHandle) widget.handle,
                     SizedBox(height: 10),
                     ...widget.children
                   ],
@@ -176,14 +180,10 @@ class _ExpandableCardState extends State<ExpandableCard>
 class Handle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Showcase(
-        key: key,
-        description: 'Tap to see menu options',
-        disableAnimation: true,
-        child: Icon(
+    return  Icon(
           Icons.remove,
           color: Colors.white30,
           size: 45,
-        ));;
+        );
   }
 }
