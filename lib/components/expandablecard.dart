@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:showcaseview/showcase.dart';
 
 class ExpandableCard extends StatefulWidget {
   ExpandableCard({
@@ -175,10 +176,14 @@ class _ExpandableCardState extends State<ExpandableCard>
 class Handle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Icon(
-      Icons.remove,
-      color: Colors.white30,
-      size: 45,
-    );
+    return Showcase(
+        key: key,
+        description: 'Tap to see menu options',
+        disableAnimation: true,
+        child: Icon(
+          Icons.remove,
+          color: Colors.white30,
+          size: 45,
+        ));;
   }
 }

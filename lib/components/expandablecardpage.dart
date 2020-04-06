@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:showcaseview/showcase.dart';
 
 import 'expandablecard.dart';
 
@@ -16,11 +15,7 @@ class ExpandableCardPage extends StatelessWidget {
     return Stack(
       children: [
         page,
-        Showcase(
-            key: key,
-            description: 'Tap to see menu options',
-            disableAnimation: true,
-            child: expandableCard)
+        expandableCard
       ],
     );
   }
